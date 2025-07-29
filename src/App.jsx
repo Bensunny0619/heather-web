@@ -2,13 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage'; 
-import './styles/app.css';
+// import './styles/app.css';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import PasswordVerificationPage from './pages/PasswordVerificationPage';
 import VerifyEmailPage from './pages/VerifyEmailPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import PasswordSuccessPage from './pages/PasswordSuccessPage';
 import CreateAccountPage from './pages/CreateAccountPage';
+import HomePage from './pages/HomePage';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/create-account" element={<CreateAccountPage />} />
         <Route path="/verify-email" element={<VerifyEmailPage />} />
         <Route path="/verify-password" element={<PasswordVerificationPage />} />
+        <Route path="/home" element={<HomePage />} />
       </Routes>
     </Router>
   );

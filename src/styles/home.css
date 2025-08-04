@@ -264,6 +264,15 @@ body {
   color: #777;
   font-size: 0.85rem;
 }
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home-nav-links .active .nav-link {
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
 
 
 

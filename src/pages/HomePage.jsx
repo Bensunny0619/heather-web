@@ -3,9 +3,13 @@ import "../styles/home.css";
 import fpIdle from "../assets/fingerprint-black.png";
 import fpHalf from "../assets/fingerprint-half.png";
 import fpSuccess from "../assets/fingerprint-green.png";
+import { Link, useLocation } from "react-router-dom";
+
+
 
 
 const HomePage = () => {
+  const location = useLocation();
   const [isSearching, setIsSearching] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [scanState, setScanState] = useState(null); // 'idle' | 'scanning' | 'success' | null
@@ -86,11 +90,19 @@ const HomePage = () => {
       {/* Navbar */}
       <nav className="home-navbar">
         <h1 className="home-logo">Heather</h1>
+      
         <ul className="home-nav-links">
-          <li className="active">Home</li>
-          <li>Explore</li>
-          <li>About</li>
+            <li className={location.pathname === "/" ? "active" : ""}>
+                <Link to="/home" className="nav-link">Home</Link>
+            </li>
+            <li className={location.pathname === "/explore" ? "active" : ""}>
+                <Link to="/explore" className="nav-link">Explore</Link>
+            </li>
+            <li>
+                <Link to="/about" className="nav-link">About</Link>
+            </li>
         </ul>
+
       </nav>
 
       <div
@@ -170,6 +182,7 @@ const HomePage = () => {
                     ? fpHalf
                     : fpSuccess
                 }
+                
                 alt="Fingerprint scan"
                 className="scan-icon"
             />

@@ -10,6 +10,7 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import PasswordSuccessPage from './pages/PasswordSuccessPage';
 import CreateAccountPage from './pages/CreateAccountPage';
 import HomePage from './pages/HomePage';
+import ExplorePage from './pages/ExplorePage';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/verify-email" element={<VerifyEmailPage />} />
         <Route path="/verify-password" element={<PasswordVerificationPage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/explore" element={<ExplorePage />} />
       </Routes>
     </Router>
   );
